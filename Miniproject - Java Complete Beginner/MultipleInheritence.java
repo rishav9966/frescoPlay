@@ -16,9 +16,11 @@ class Sport implements HockeyTeam,FootballTeam{
     int[] hockeyPlayers;
     int[] footballPlayers;
     Sport(int[] hockeyPlayers,int[] footballPlayers){
-        this.hockeyPlayers = Arrays.copyOfRange(hockeyPlayers, 0, 11);
-        this.footballPlayers = Arrays.copyOfRange(footballPlayers, 11, 22);
+        this.hockeyPlayers = hockeyPlayers;
+        this.footballPlayers = footballPlayers;
     }
+    
+    
     public int calculateHockeyScore(){
         int result=0;
         for(int i=0;i<this.hockeyPlayers.length;i++){
@@ -28,8 +30,8 @@ class Sport implements HockeyTeam,FootballTeam{
     }
     
     public int findHighestGoalByIndividualInHockey(){
-        int max=0;
-        for(int i=0;i<this.hockeyPlayers.length;i++){
+        int max=this.hockeyPlayers[0];
+        for(int i=1;i<this.hockeyPlayers.length;i++){
             if(this.hockeyPlayers[i]>max){
                 max = this.hockeyPlayers[i];
             }
