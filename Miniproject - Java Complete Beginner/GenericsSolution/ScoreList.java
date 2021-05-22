@@ -1,30 +1,31 @@
-
-// package com.fresco;
+// package Solution.DemoMavenEclipseProject;
 
 import java.util.*;
 
-public class ScoreList {
-    
+public class ScoreList<T extends Number> {
+    private ArrayList<T> input;
 
-    private ArrayList<Number> input = new ArrayList<Number>();
-    
-    public <T extends Number> void addElement(T data) {
+    ScoreList() {
+        this.input = new ArrayList<T>();
+    }
+
+    public void addElement(T data) {
         // this.
         this.input.add(data);
     }
 
-    public <T extends Number> void removeElement(T data) {
+    public void removeElement(T data) {
         this.input.remove(data);
     }
 
-    public Number getElement(int n) {
+    public T getElement(int n) {
         return this.input.get(n);
     }
 
     public double averageValues() {
         int i;
         // Number temp;
-        double temp,res = 0;
+        double temp, res = 0;
         for (i = 0; i < this.input.size(); i++) {
             // sum += Integer.parseInt(this.input.getElement(i));
             temp = getElement(i).doubleValue();
@@ -33,4 +34,5 @@ public class ScoreList {
         res = res / i;
         return res;
     }
+
 }
