@@ -2,10 +2,6 @@
 
 // package com.fresco;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.TypeVariable;
-
 public class StudentClass {
 
   public String getQuery(String studentData, String query) {
