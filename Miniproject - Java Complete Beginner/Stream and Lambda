@@ -1,0 +1,22 @@
+1. Filter out the Kaprekar Numbers
+A Kaprekar number consists of n digits which, when squared and split up into two parts with the left part having either n or n-1 digits and the right part having exactly n digits with both the sides as non-zero, and when those left and right parts are added together gives the original number.
+
+For example, let us take 45. When squared, it gives us 2025, and when we split 2025 and sum up, it gives 45 (20+25). So, 45 is a Kaprekar number.
+
+You will be given a list of strings consists of integers. You should use the java8 stream, map, and filter functions to store only the Kaprekar numbers in a list and return that.
+
+ 
+
+Input Specifications:
+    A list of strings
+    
+Output Specifications:
+    A list of Kaprekar numbers from the input list (The list should be of long type).
+    
+Sample Input 1:
+["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]
+
+ 
+
+Sample Output 1:
+[1, 9, 45, 55, 99]
