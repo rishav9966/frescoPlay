@@ -1,0 +1,38 @@
+1. Working with Multithreading
+You will be given an array of size 300. The name of the array is threadArray, and the index of the array should be referenced by using a variable name i.
+
+(Note: The variables threadArray, and i (variable name to access the index of the array) are declared in the predefined class solution).
+
+ 
+
+You have to insert elements into the array using three threads by creating three classes, namely Task1, Task2, and Task3, respectively. The values to be inserted into the array are 0,1,2,3,.....299. 
+
+ 
+
+You should override the run method in the threads. Three integers i, j, and k will be given, representing the number of elements each thread should append inside the given array.
+Thread one should append 0 to i-1 inside the array, thread two should append i to i+j-1 inside the array, and the third thread should append i+j to 299 inside the array.
+Threads one and two must run simultaneously, and the values of the threads one and two must be inserted inside the indices of the array from 0 to i+j-1 randomly. The third thread should start only after the first two threads have been executed completely.
+
+ 
+
+Input Specifications:
+The first line is an integer representing the number of elements to be inserted inside the array by thread one.
+The second line is an integer representing the number of elements to be inserted inside the array by thread two.
+The third line is an integer representing the number of elements to be inserted inside the array by thread three.
+
+ 
+
+Output Specifications:
+The output should be true if the processes are executed in the correct order. Otherwise, it should be false.
+
+ 
+
+Sample Input:
+80
+130
+90
+
+ 
+
+Sample Output:
+true (if both the threads one and two have run simultaneously and the third thread has run after them), or false (if threads one and two have not run simultaneously and thread three has started before threads one and two have got completed).
