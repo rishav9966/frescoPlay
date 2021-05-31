@@ -1,0 +1,42 @@
+1. File Operations
+Nandhini wants to store a decrypted message, and read an encrypted message sent by her friend. As part of the design phase, Nandhini creates an EncryptDecryptFile class to store the decrypted message in the DecryptionFile.txt file and to read the encrypted message in the EncryptionFile.txt file.
+
+ 
+
+Implement the EncryptDecryptFile class which must implement the public void writeDecryptionFile(String message) and public String readEncryptionFile() methods.
+
+void writeDecryptionFile(String message):  Create and write the DecryptionFile.txt file in the specified file path (must contain the decrypted message passed). 
+
+String readEncryptionFile(): Read the encrypted message from the EncryptionFile.txt  file in the specified file path (must return the encrypted message).
+
+ 
+
+Note: Accessing the Solution.filepath variable to know the file path.
+
+ 
+
+The locked code stub validates the implementation of the EncryptDecryptFile class.
+
+ 
+
+Input Format:
+
+The first line contains a decrypted message, which must be stored in the DecryptionFile.txt file.
+
+ 
+
+Sample Input:
+
+ 
+
+Hello World!!!
+Sample Output:
+
+ 
+
+Hello World!!!
+ 
+
+Output Specification:
+
+The first line contains a decrypted message, which is stored in the DecryptionFile.txt file.
