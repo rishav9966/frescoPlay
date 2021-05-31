@@ -6,7 +6,7 @@ class Task1 extends Thread{
     static int beg;
     public void run(){
         for(int i=beg;i <= a;i++){
-            Solution.threadArray[i] = i+1;
+            Multithreading.threadArray[i] = i+1;
                 //it should ne i only but to satisfy the test conditions this is only option I had
         }
     }
@@ -16,7 +16,7 @@ class Task2 implements Runnable{
     static int beg;
     public void run(){
         for(int i=beg;i < a+beg;i++){
-            Solution.threadArray[i] = i;
+            Multithreading.threadArray[i] = i;
         }
     }
 }
@@ -25,12 +25,12 @@ class Task3 implements Runnable{
     static int beg;
     public void run(){
         for(int i=beg;i < a+beg;i++){
-            Solution.threadArray[i] = i;
+            Multithreading.threadArray[i] = i;
         }
     }
 }
 
-public class Solution {
+public class Multithreading {
         public static final int[] threadArray = new int[300];
         public static volatile String i = 0+"";
     public boolean test() throws InterruptedException
@@ -77,7 +77,7 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException 
     {
         Scanner sc= new Scanner(System.in);
-            Solution solution = new Solution();
+            Multithreading solution = new Multithreading();
             int one = sc.nextInt();
             Task1.a = one;
             Task1.beg = 0;
