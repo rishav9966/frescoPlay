@@ -4,6 +4,33 @@ import java.util.Scanner;
 
 // Write your code below.
 //
+class EncryptDecryptFile{
+    public void writeDecryptionFile(String message){
+        try {
+            FileWriter myWriter = new FileWriter(Solution.filepath+"DecryptionFile.txt");
+            myWriter.write(message); 
+            myWriter.close(); 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public String readEncryptionFile(){
+        String data = "";
+        try {
+            File myObj = new File(Solution.filepath+"EncryptionFile.txt");  
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String temp = myReader.nextLine();
+                data+=temp;
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+}
 
 public class Solution {
     public static String filepath = System.getenv("OUTPUT_PATH").substring(0, System.getenv("OUTPUT_PATH").lastIndexOf("\\") + 1);
@@ -27,7 +54,7 @@ public class Solution {
         try{
             EncryptDecryptFile f = new EncryptDecryptFile ();
 
-            String encryptFilename = Solution.filepath + "EncryptionFile.txt";
+            String encryptFilename = FileJava.filepath + "EncryptionFile.txt";
             String generatedString = generateString();
             BufferedWriter writer = new BufferedWriter(new FileWriter(encryptFilename));
             writer.write(generatedString);
@@ -37,7 +64,7 @@ public class Solution {
             {
                 f.writeDecryptionFile(message);
 
-                String decryptFilename = Solution.filepath + "DecryptionFile.txt";
+                String decryptFilename = FileJava.filepath + "DecryptionFile.txt";
                 BufferedReader reader = new BufferedReader(new FileReader(decryptFilename));
                 String messageFromFile = reader.readLine();
                 reader.close();
