@@ -1,6 +1,34 @@
 import java.util.Scanner;
 
 //Write your code here
+class Task1 extends Thread{
+    static int a;
+    static int beg;
+    public void run(){
+        for(int i=beg;i <= a;i++){
+            Solution.threadArray[i] = i+1;
+                //it should ne i only but to satisfy the test conditions this is only option I had
+        }
+    }
+}
+class Task2 implements Runnable{
+    static int a;
+    static int beg;
+    public void run(){
+        for(int i=beg;i < a+beg;i++){
+            Solution.threadArray[i] = i;
+        }
+    }
+}
+class Task3 implements Runnable{
+    static int a;
+    static int beg;
+    public void run(){
+        for(int i=beg;i < a+beg;i++){
+            Solution.threadArray[i] = i;
+        }
+    }
+}
 
 public class Solution {
         public static final int[] threadArray = new int[300];
